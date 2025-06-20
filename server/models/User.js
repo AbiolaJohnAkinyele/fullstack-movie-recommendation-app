@@ -5,14 +5,26 @@ const userSchema = new mongoose.Schema(
         username: { 
             type: String, 
             required: true, 
-            trim: true },
+            trim: true,
+            unique: true
+        },
         email: { 
             type: String, 
             required: true, 
-            unique: true },
+            unique: true 
+        },
         password: { 
             type: String, 
-            required: true }
+            required: true 
+        },
+        watchlist: [
+            {
+                movieId: String,
+                title: String,
+                poster: String,
+                releaseDate: String,
+            },
+        ],
     }, 
     { 
     timestamps: true 
